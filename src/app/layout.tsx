@@ -35,13 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         style={{
           maxWidth: "480px",
           margin: "0 auto",
           boxShadow: "0 0 10px rgba(0,0,0,0.05)",
         }}
+        suppressHydrationWarning
       >
         <Provider>
           <div className="h-screen w-full pb-24">{children}</div>
