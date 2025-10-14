@@ -1,13 +1,13 @@
 import SpotPage from "@/features/spot/components/SpotPage";
 
 interface SpotPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function Spot({ params }: SpotPageProps) {
-  const id = params.id;
+export default async function Spot({ params }: SpotPageProps) {
+  const { id } = await params;
 
   return (
     <div>
