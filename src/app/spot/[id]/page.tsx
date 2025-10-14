@@ -1,7 +1,17 @@
-export default function Spot() {
+import SpotPage from "@/features/spot/components/SpotPage";
+
+interface SpotPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function Spot({ params }: SpotPageProps) {
+  const id = params.id;
+
   return (
     <div>
-      <span>Spot Page</span>
+      <SpotPage id={id} />
     </div>
   );
 }
