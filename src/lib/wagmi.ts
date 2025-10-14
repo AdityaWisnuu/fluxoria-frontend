@@ -3,7 +3,7 @@ import { http } from "wagmi";
 import { base, sepolia } from "wagmi/chains";
 
 export const config = getDefaultConfig({
-  appName: "RainbowKit App",
+  appName: "Fluxoria",
   projectId:
     process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "",
   chains: [
