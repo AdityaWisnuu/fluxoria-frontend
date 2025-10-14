@@ -7,3 +7,12 @@ export const formatVolume = (vol: number) => {
 export const handleRedirect = (id: string) => {
   window.location.href = `/spot/${id}`;
 };
+
+export const formatDeadline = (deadline: string) => {
+  const date = new Date(deadline);
+  return date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+};

@@ -1,6 +1,6 @@
-import { TrendingUp } from "lucide-react";
+import { Clock, TrendingUp } from "lucide-react";
 import { News } from "../types/trending.types";
-import { formatVolume } from "../utils/home.helper";
+import { formatDeadline, formatVolume } from "../utils/home.helper";
 
 interface MarketCardProps {
   market: News;
@@ -31,12 +31,23 @@ export default function MarketCard({ market, onClick }: MarketCardProps) {
 
       {/* Volume */}
       <div className="flex items-center justify-between pt-3 border-t border-border">
-        <span className="text-muted-foreground text-xs">Volume</span>
-        <div className="flex items-center gap-1">
-          <TrendingUp className="w-3 h-3 text-primary" />
-          <span className="text-gray-400 text-sm font-semibold">
-            {formatVolume(market.volume)}
-          </span>
+        <div className="flex flex-row gap-2">
+          <span className="text-muted-foreground text-xs">Ends on </span>
+          <div className="flex items-center gap-1">
+            <Clock className="w-3 h-3 text-primary" />
+            <span className="text-gray-400 text-sm font-semibold">
+              {formatDeadline(market.deadline)}
+            </span>
+          </div>
+        </div>
+        <div className="flex flex-row gap-2">
+          <span className="text-muted-foreground text-xs">Volume</span>
+          <div className="flex items-center gap-1">
+            <TrendingUp className="w-3 h-3 text-primary" />
+            <span className="text-gray-400 text-sm font-semibold">
+              {formatVolume(market.volume)}
+            </span>
+          </div>
         </div>
       </div>
     </div>
