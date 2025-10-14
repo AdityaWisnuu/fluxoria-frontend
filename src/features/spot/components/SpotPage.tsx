@@ -15,8 +15,8 @@ export default function SpotPage({ id }: { id: string }) {
                 <span>Total Volume : {formatVolume(data?.volume || 0)}</span>
                 <span>Ends on {formatDeadline(data?.deadline || '')}</span>
             </div>
-            <PredictionMarketChart />
             <PredictionBidForm />
+            <PredictionMarketChart />
         </div>
     </div>
   )
